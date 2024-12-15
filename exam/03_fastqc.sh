@@ -31,3 +31,4 @@ done
 # Deactivate conda environment
 conda deactivate
 
+exit 0
