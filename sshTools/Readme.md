@@ -77,11 +77,11 @@ This guide explains how to create a command file that runs the `login_to_server.
 
 ### Step 1: Make the Shell Script Executable
 
-1. Make sure `login_to_server.sh` is located in a directory (e.g., `~/Desktop/Ferrementas/scripts/`).
+1. Make sure `login_to_server.sh` is located in a directory.
 2. Open **Terminal** and make the script executable by running:
 
     ```bash
-    chmod +x ~/Desktop/Ferrementas/scripts/login_to_server.sh
+    chmod +x ~/login_to_server.sh #ADD PATH
     ```
 
 ---
@@ -93,7 +93,7 @@ This guide explains how to create a command file that runs the `login_to_server.
 
     ```bash
     #!/bin/bash
-    ~/Desktop/Ferrementas/scripts/login_to_server.sh
+    ~/login_to_server.sh # ADD PATH
     ```
 
 3. Save the file as `run_login_to_server.command`.
@@ -156,11 +156,11 @@ This guide explains how to create a command file that runs the `login_to_server.
 
 ### Step 1: Make the Shell Script Executable
 
-1. Make sure `login_to_server.sh` is in the correct directory (e.g., `~/Desktop/Ferrementas/scripts/`).
+1. Make sure `login_to_server.sh` is in the correct directory.
 2. Open **Terminal** and make the script executable:
 
     ```bash
-    chmod +x ~/Desktop/Ferrementas/scripts/login_to_server.sh
+    chmod +x ~/login_to_server.sh #ADD PATH
     ```
 
 ---
@@ -172,7 +172,7 @@ This guide explains how to create a command file that runs the `login_to_server.
     ```bash
     [Desktop Entry]
     Name=Login to Server
-    Exec=~/Desktop/Ferrementas/scripts/login_to_server.sh
+    Exec=~/login_to_server.sh # ADD PATH 
     Icon=/path/to/icon.png  # Optional: path to your custom icon
     Terminal=true
     Type=Application
