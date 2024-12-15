@@ -78,14 +78,14 @@ To use the script, you need to pass the **process name** and the **log file path
 
 ```bash
 python script_name.py [process_name] [log_file_path]
-
+```
 ## Example
 
 Assume you have a long-running process called `data_processing`, and you want to send a notification once it’s done, including the log contents. If your log file is located at `/path/to/log.txt`, run the following:
 
 ```bash
 python process_notification.py data_processing /path/to/log.txt
-
+```
 ## Set Up Email Notifications on Your Phone or Computer
 
 ### Enable Desktop or Mobile Notifications
