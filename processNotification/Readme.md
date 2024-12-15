@@ -65,6 +65,7 @@ Replace the placeholders in the script with your email details:
 ```python
 EMAIL = "your_email@gmail.com"  # Replace with your email address
 PASSWORD = "your_app_password"  # Replace with the generated app password
+```
 > **Important**: Do not hard-code your actual password in scripts you share or store publicly. Always use app-specific passwords or environment variables for sensitive information.
 
 ---
