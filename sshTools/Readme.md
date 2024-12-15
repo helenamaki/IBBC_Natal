@@ -164,8 +164,3 @@ Now, you can double-click the application on your desktop to run the command.
 Now, you can double-click the `.desktop` file to run the command, and it will appear as an icon on your desktop.
 
 ---
-
-## Conclusion
-
-By following these steps, you can create custom icons to easily run commands, whether you're on **Windows**, **macOS**, or **Linux**. This setup will help streamline your workflow and make repeated tasks more convenient.
-
