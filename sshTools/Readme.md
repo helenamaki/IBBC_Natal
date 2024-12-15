@@ -67,98 +67,122 @@ This guide explains how to create an icon that runs a command on **Windows**, **
 
 ---
 
-## **For macOS**
+# Creating an Icon to Run `login_to_server.sh` on macOS, Windows, and Linux
 
-### Step 1: Create a Shell Script (.command)
+This guide explains how to create a command file that runs the `login_to_server.sh` script and assign an icon to the file for **macOS**, **Windows**, and **Linux**. 
 
-1. Open **TextEdit** and set the format to **Plain Text** (Format > Make Plain Text).
-2. Write your command inside the script. For example:
+---
+
+## macOS Instructions
+
+### Step 1: Make the Shell Script Executable
+
+1. Make sure `login_to_server.sh` is located in a directory (e.g., `~/Desktop/Ferrementas/scripts/`).
+2. Open **Terminal** and make the script executable by running:
+
+    ```bash
+    chmod +x ~/Desktop/Ferrementas/scripts/login_to_server.sh
+    ```
+
+---
+
+### Step 2: Create the `.command` File
+
+1. Open **TextEdit** and set the format to **Plain Text**.
+2. Write the following:
 
     ```bash
     #!/bin/bash
-    sshpass -p "your_password" ssh your_username@thor.fc.ul.pt
+    ~/Desktop/Ferrementas/scripts/login_to_server.sh
     ```
 
-3. Save the file with a `.command` extension (e.g., `run_ssh.command`).
-   - When saving, ensure **TextEdit** doesn't add the `.txt` extension. Choose **All Files** in the "Save As" dialog to save it as `.command` instead.
-
-### Step 2: Make the Script Executable
-
-1. Open **Terminal**.
-2. Navigate to the directory where your `.command` file is saved.
-3. Run the following command to make the script executable:
+3. Save the file as `run_login_to_server.command`.
+4. Make it executable by running the following in **Terminal**:
 
     ```bash
-    chmod +x run_ssh.command
+    chmod +x /path/to/run_login_to_server.command
     ```
 
 ### Step 3: Change the Icon (Optional)
 
-1. **Find or download an icon** you want to use (for example, the **FCUL logo**).
-   - You can use an `.icns` file or any image that macOS supports for icons.
-   
-2. **Right-click** the `.command` file and select **Get Info**.
-3. **Drag the icon file** (e.g., the FCUL logo image or `.icns` file) to the icon area at the top-left corner of the **Get Info** window.
-4. The icon for the `.command` file will now be updated.
-
-### Step 4: Running the Command
-
-Now, you can **double-click** the `.command` file on your desktop, and it will run the command as expected.
+1. Download or find an icon you want to use (e.g., FCUL logo).
+2. Right-click the `.command` file and select **Get Info**.
+3. Drag and drop your icon file into the top-left corner of the **Get Info** window.
 
 ---
 
-## **For Linux**
+## Windows Instructions
 
-### Step 1: Create a Shell Script (.sh)
+### Step 1: Install `sshpass` (if not installed)
 
-1. Open your preferred text editor and write your command inside the script. For example:
-
-    ```bash
-    #!/bin/bash
-    sshpass -p "your_password" ssh your_username@thor.fc.ul.pt
-    ```
-
-2. Save the file with a `.sh` extension (e.g., `run_ssh.sh`).
-
-### Step 2: Make the Script Executable
-
-1. Open a terminal.
-2. Navigate to the folder where the `.sh` file is located.
-3. Make it executable with the following command:
+1. Download **Git Bash** from [Git's official website](https://git-scm.com/).
+2. Install **sshpass** using **Git Bash**:
 
     ```bash
-    chmod +x run_ssh.sh
+    sudo apt-get install sshpass
     ```
 
-### Step 3: Create a Desktop Shortcut (Launcher)
+---
 
-1. In your terminal, navigate to the directory where you want to create the launcher (typically `~/Desktop`).
-2. Create a `.desktop` file by running:
+### Step 2: Create the Batch Script (`login_to_server.bat`)
+
+1. Open **Notepad**.
+2. Write the following batch script:
+
+    ```batch
+    @echo off
+    set SERVER=thor.fc.ul.pt
+    set USERNAME=your_username
+    set PASSWORD=your_password
+
+    sshpass -p %PASSWORD% ssh %USERNAME%@%SERVER%
+    ```
+
+3. Save the file as `login_to_server.bat`.
+
+---
+
+### Step 3: Change the Icon (Optional)
+
+1. Download an icon (e.g., FCUL logo).
+2. Right-click the `.bat` file and select **Create shortcut**.
+3. Right-click the shortcut and select **Properties**.
+4. Under the **Shortcut** tab, click **Change Icon...**.
+5. Browse to the icon you downloaded, select it, and click **OK**.
+
+---
+
+## Linux Instructions
+
+### Step 1: Make the Shell Script Executable
+
+1. Make sure `login_to_server.sh` is in the correct directory (e.g., `~/Desktop/Ferrementas/scripts/`).
+2. Open **Terminal** and make the script executable:
 
     ```bash
-    nano run_ssh.desktop
+    chmod +x ~/Desktop/Ferrementas/scripts/login_to_server.sh
     ```
 
-3. Inside the file, write the following:
+---
 
-    ```ini
+### Step 2: Create the `.desktop` File (Linux)
+
+1. Open your text editor and create a new file:
+
+    ```bash
     [Desktop Entry]
-    Version=1.0
-    Name=Run SSH
-    Comment=Run SSH command using sshpass
-    Exec=/path/to/run_ssh.sh
-    Icon=/path/to/icon.png
-    Terminal=false
+    Name=Login to Server
+    Exec=~/Desktop/Ferrementas/scripts/login_to_server.sh
+    Icon=/path/to/icon.png  # Optional: path to your custom icon
+    Terminal=true
     Type=Application
     ```
 
-4. Save and exit by pressing **Ctrl+X**, then **Y**, and then **Enter**.
-5. Make the `.desktop` file executable:
+2. Save the file as `login_to_server.desktop`.
+3. Make the `.desktop` file executable:
 
     ```bash
-    chmod +x run_ssh.desktop
+    chmod +x /path/to/login_to_server.desktop
     ```
-
-Now, you can double-click the `.desktop` file to run the command, and it will appear as an icon on your desktop.
 
 ---
