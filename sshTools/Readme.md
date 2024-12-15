@@ -69,7 +69,7 @@ This guide explains how to create an icon that runs a command on **Windows**, **
 
 ## **For macOS**
 
-### Step 1: Create a Shell Script (.sh)
+### Step 1: Create a Shell Script (.command)
 
 1. Open **TextEdit** and set the format to **Plain Text** (Format > Make Plain Text).
 2. Write your command inside the script. For example:
@@ -79,33 +79,31 @@ This guide explains how to create an icon that runs a command on **Windows**, **
     sshpass -p "your_password" ssh your_username@thor.fc.ul.pt
     ```
 
-3. Save the file with a `.sh` extension (e.g., `run_ssh.sh`).
+3. Save the file with a `.command` extension (e.g., `run_ssh.command`).
+   - When saving, ensure **TextEdit** doesn't add the `.txt` extension. Choose **All Files** in the "Save As" dialog to save it as `.command` instead.
 
 ### Step 2: Make the Script Executable
 
 1. Open **Terminal**.
-2. Navigate to the directory where your `.sh` file is saved.
+2. Navigate to the directory where your `.command` file is saved.
 3. Run the following command to make the script executable:
 
     ```bash
-    chmod +x run_ssh.sh
+    chmod +x run_ssh.command
     ```
 
-### Step 3: Create a Custom Application Icon (Using Automator)
+### Step 3: Change the Icon (Optional)
 
-1. Open **Automator** (you can find it using Spotlight).
-2. Select **Application** when prompted to choose a document type.
-3. In the search bar, type **"Run Shell Script"** and drag the action into the workflow.
-4. Inside the **Run Shell Script** box, enter the path to your script. For example:
+1. **Find or download an icon** you want to use (for example, the **FCUL logo**).
+   - You can use an `.icns` file or any image that macOS supports for icons.
+   
+2. **Right-click** the `.command` file and select **Get Info**.
+3. **Drag the icon file** (e.g., the FCUL logo image or `.icns` file) to the icon area at the top-left corner of the **Get Info** window.
+4. The icon for the `.command` file will now be updated.
 
-    ```bash
-    /path/to/run_ssh.sh
-    ```
+### Step 4: Running the Command
 
-5. Save the Automator application with a name like `Run SSH.app` on your desktop.
-6. Right-click the new app, select **Get Info**, and drag a custom icon file (.icns) to the icon area.
-
-Now, you can double-click the application on your desktop to run the command.
+Now, you can **double-click** the `.command` file on your desktop, and it will run the command as expected.
 
 ---
 
