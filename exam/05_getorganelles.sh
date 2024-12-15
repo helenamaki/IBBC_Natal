@@ -38,3 +38,4 @@ done
 echo "Completed organelle extraction."
 
 conda deactivate
+exit 0
