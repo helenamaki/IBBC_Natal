@@ -14,3 +14,4 @@ echo "MultiQC report generated in 04_multiqc/"
 
 # Deactivate conda environment
 conda deactivate
+exit 0
