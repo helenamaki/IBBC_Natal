@@ -76,15 +76,15 @@ def send_process_email(log_content, recipients_file):
         print(f"Failed to send email: {e}")
 
 def create_hyperlink():
-    rickroll = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    rr = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     github_link = "https://github.com/helenamaki/IBBC_Natal"
     
     # The full string to be used
-    rickroll_text = "repositório do Gi"
+    rr_text = "repositório do Gi"
     repo_text = "tHub"
 
-    # The rickroll link will cover all except the last 3 characters ("e repository") part
-    return f'<a href="{rickroll}">{rickroll_text}</a><a href="{github_link}">{repo_text}</a>'
+    # The rr link will cover all except the last 3 characters ("e repository") part
+    return f'<a href="{rr}">{rr_text}</a><a href="{github_link}">{repo_text}</a>'
 
 def get_log_content(log_file):
     if os.path.exists(log_file):
