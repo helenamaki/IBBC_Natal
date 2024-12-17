@@ -83,7 +83,7 @@ def create_hyperlink():
     rr_text = "repositório do Gi"
     repo_text = "tHub"
 
-    # The rr link will cover all except the last 3 characters ("e repository") part
+    # The rr link will cover all except the last few characters ("tHub") part
     return f'<a href="{rr}">{rr_text}</a><a href="{github_link}">{repo_text}</a>'
 
 def get_log_content(log_file):
