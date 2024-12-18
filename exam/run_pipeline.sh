@@ -1,6 +1,6 @@
 #!/bin/bash
 # DefineEmailListFile
-EMAIL_LIST_FILE="testEmailList.csv"
+EMAIL_LIST_FILE="courseEmails.csv"
 # Capture the start time
 start_time=$(date +%s)
 # Define log folder and log file name
